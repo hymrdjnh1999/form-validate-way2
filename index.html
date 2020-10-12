@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <form action="" method="post" class="form" id="register-form">
+            <h3 class="heading">
+                Thành viên đăng ký
+            </h3>
+            <p class="desc">
+                Cùng nhau học lập trình miễn phí tại F8!
+            </p>
+            <div class="spacer">
+            </div>
+            <div class="form-group 22">
+                <label for="fullname" class="form-label">Tên đầy đủ</label>
+                <input type="text" class="form-input" rules="required" placeholder="VD: Đỗ Tiến Định" id="fullname"
+                    name="name">
+
+                <span class="form-message">
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-input" rules="required|email"
+                    placeholder="VD: dinhdt.nde19026@vtc.edu.vn" id="email" name="email">
+                <span class="form-message">
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-input" rules="required|min:6" placeholder="Nhập mật khẩu"
+                    id="password" name="password" autocomplete="on">
+                <span class="form-message">
+                </span>
+            </div>
+            <!-- <div class="form-group">
+                <label for="password-comfirmation" class="form-label">Nhập lại mật khẩu</label>
+                <input type="password" class="form-input" rules="required" placeholder="Nhập lại mật khẩu"
+                    id="password-comfirmation" name="password-comfirmation" autocomplete="on">
+                <span class="form-message">
+                </span>
+            </div> -->
+            <!-- <div class="form-group">
+                <label for="" class="form-label">Giới tính</label>
+                <div class="gender">
+                    <div class="gender-option">
+                        <input type="radio" class="gender-input" name="gender" value="male">
+                        <span class="gender-label">
+                            Nam
+                        </span>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" class="gender-input" name="gender" value="female">
+                        <span class="gender-label">
+                            Nữ
+                        </span>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" class="gender-input" name="gender" value="other">
+                        <span class="gender-label">
+                            Khác
+                        </span>
+                    </div>
+                </div>
+                <span class="form-message">
+                </span>
+            </div> -->
+            <!-- <div class="form-group">
+                <label for="file" class="form-label">Tỉnh/TP</label>
+                <input type="file" class="form-input" id="file" name="file">
+                <span class="form-message">
+                </span>
+            </div> -->
+            <!-- <div class="form-group">
+                <label for="province" class="form-label">Tỉnh/TP</label>
+                <select class="form-input form-select" id="province" name="province">
+                    <option value="">--Chọn Tỉnh/TP</option>
+                    <option value="hni">Hà Nội</option>
+                    <option value="hpg">Hải Phòng</option>
+                    <option value="hdg">Hải Dương</option>
+                </select>
+                <span class="form-message">
+                </span>
+            </div> -->
+            <button class="form-btn" type="submit">
+                Đăng ký
+            </button>
+        </form>
+        <section></section>
+    </div>
+    <script src="validator.js">
+
+    </script>
+    <script>
+        const colors = ['#2196f3', '#e91e63', '#ffeb3b', '#74ff1b', 'white']
+        function createSquare() {
+            const section = document.querySelector('.main');
+            const square = document.createElement('span');
+            square.classList.add('square')
+            var size = Math.random() * 50;
+            square.style = `width : ${(size + 20)}px;height : ${(size + 20)}px;`;
+            square.style.top = Math.random() * innerHeight + 'px';
+            square.style.left = Math.random() * innerWidth + 'px';
+            const colorBackground = colors[Math.floor(Math.random() * colors.length)];
+            square.style.backgroundColor = colorBackground;
+            section.appendChild(square);
+
+            setTimeout(() => {
+                square.remove();
+            }, 4000);
+        }
+        setInterval(createSquare, 150);
+
+    </script>
+    <script>
+        new Validator('#register-form');
+
+    </script>
+</body>
+
+</html>

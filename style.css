@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main{
+    position: fixed ;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+
+}
+.square{
+    position: absolute;
+    background-color: #ffffff;
+    pointer-events: none;
+    animation:  animate linear 5s  infinite;
+
+}
+@keyframes animate{
+    0%{
+        transform: scale(0) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10%{
+       opacity: 1;     
+    }
+    90%{
+        opacity: 1;     
+     }
+    100%{
+        transform: scale(1) translateY(-500%) rotate(360deg);
+        opacity: 0;
+
+    }
+}
+
+.form{
+    padding: 0 20px;   
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 2px;
+    z-index: 1;
+}
+.heading{
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 40px 20px 0 0 ;
+    font-weight: 400;
+    font-size: 24px;
+    
+}
+.desc{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    color: #444;
+    margin-bottom: 0;
+}
+.error .form-input{
+    border: 1px solid red;
+}
+.error .form-input:focus{
+    border: 1px solid red;
+}
+.error .form-input:hover{
+    border: 1px solid red;
+}
+
+.error .form-message{
+    color : red;
+    display: block;
+}
+.spacer{
+    padding: 10px 0;
+}
+.form-group{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-label{
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.gender{
+    display: flex;
+}
+.gender-option{
+    margin: 0 20px;
+}
+.gender-option .form-input{
+    height: 14px;
+}
+.form-group .form-select{
+    width: 100%;
+}
+.form-input{
+    height: 36px;
+    width: 400px;
+    border: 1px solid #888;
+    padding: 0 10px;
+    border-radius: 2px;
+    outline: none;
+}
+.form-input:last-child{
+    margin-bottom: 0;
+}
+.form-group .form-input:hover{
+   border-color: #2cb;
+}
+
+.form-input::placeholder{
+    font-size: 14px
+}
+.form-message{
+    padding: 2px 0;
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+.form-btn{
+    width: 100%;
+    height: 36px;
+    border-radius: 6px;
+    background-color: #2cb;
+    margin: 20px 0;
+    outline: none;
+    border: 0;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
